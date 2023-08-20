@@ -1,7 +1,7 @@
 package src.Modules;
 
 import src.Exceptions.InvalidGameDimensionException;
-import src.Exceptions.PlayersSizeNoSufficient;
+import src.Exceptions.PlayersSizeNotSufficient;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -87,7 +87,7 @@ public class Game {
             }catch(InvalidGameDimensionException igde){
                 System.out.println("Exception related to board dimension has occurred:");
                 return null;
-            }catch(PlayersSizeNoSufficient psns){
+            }catch(PlayersSizeNotSufficient psns){
                 System.out.println("Exception related to players count has occurred:");
                 return null;
             }
@@ -101,13 +101,13 @@ public class Game {
             return game;
         }
 
-        private void isValid() throws InvalidGameDimensionException, PlayersSizeNoSufficient {
+        private void isValid() throws InvalidGameDimensionException, PlayersSizeNotSufficient {
             if(dimension < 3){
                 throw new InvalidGameDimensionException("Minimum dimension allowed is 3");
             }
 
             if(players.size() < 2){
-                throw new PlayersSizeNoSufficient("Players count should be at least 2 to play a game");
+                throw new PlayersSizeNotSufficient("Players count should be at least 2 to play a game");
             }
         }
 
