@@ -2,17 +2,17 @@ package src.Modules;
 
 public class Cell {
 
-    private Player player;
+    private Players players;
     private int row;
     private int col;
     private CellState cellState;
 
-    public Player getPlayer() {
-        return player;
+    public Players getPlayer() {
+        return players;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setPlayer(Players players) {
+        this.players = players;
     }
 
     public int getRow() {
@@ -37,6 +37,12 @@ public class Cell {
 
     public void setCellState(CellState cellState) {
         this.cellState = cellState;
+    }
+
+    Cell(int row, int col){
+        this.row = row;
+        this.col = col;
+        this.cellState = CellState.EMPTY;
     }
 
 }
